@@ -2,26 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+/* #weekList::after { */
+/*   content: ''; */
+/*   position: absolute; */
+/*   box-sizing: border-box; */
+/*   outline: 0.1em solid #454545; */
+/*   border-radius: 50%; */
+/*   width: calc(100% + 20%); */
+/*   height: calc(100% + 20%); */
+/*   top: -10%; */
+/*   left: -10%; */
+/* } */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+/* #weekList:hover::after { */
+/*   outline: 0.1em solid #fce7b1; */
+/* } */
