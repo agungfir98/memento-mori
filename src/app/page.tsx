@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <div className="mx-10 flex flex-col gap-8">
       <Header />
-      <main className="grid max-sm:grid-cols-1 sm:grid-cols-3">
-        <WeekTiles />
-        <ul className="list-disc text-justify font-semibold leading-7 pb-20 sm:col-start-3 sm:pl-12">
+      <main className="grid sm:grid-cols-[1fr,auto] grid-cols-1 ">
+        <WeekTiles className="col-start-1 row-start-1" />
+        <ul className="list-disc text-justify w-[400px] font-semibold leading-7 pb-20 sm:col-start-2 sm:row-start-1 sm:pl-12 pt-8">
           <li className="text-green-600">
             Pada rentang ini, kamu hanya seorang anak anak, menikmati hidup
             dengan bermain disebagian besar waktumu.
@@ -33,7 +33,6 @@ export default function Home() {
           </li>
           <li className="text-slate-600">
             pada rentang ini kamu mungkin sudah pensiun, menuai segala yang
-            telah kamu tanam semasa hidup.
           </li>
         </ul>
       </main>

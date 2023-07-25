@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import moment, { Moment } from 'moment'
 import 'react-tooltip/dist/react-tooltip.css'
 
-export default function WeekTiles() {
+export default function WeekTiles(props: { className: string }) {
   moment.updateLocale('id', {
     longDateFormat: {
       LT: 'HH:mm',
@@ -71,24 +71,32 @@ export default function WeekTiles() {
   }, [totalWeeks, birth, weekPassed, weekInYear])
 
   return (
-    <div className="grid grid-cols-[auto,1fr] pb-20 col-span-2">
-      <div className="col-start-2 gap-2 flex items-center font-semibold">
+    <div className={`${props.className} grid grid-cols-[auto,auto,1fr]`}>
+      <div className="col-start-3 row-start-1 gap-2 flex items-center font-semibold">
         Pekan dalam hidupmu<p className="text-3xl text-top">&#8640;</p>
+      </div>
+      <div className="col-start-1 row-start-2 rotate-90 w-6 h-max">
+        <div className="w-fit h-fit whitespace-nowrap font-semibold flex items-center gap-2">
+          Tahun dalam hidupmu <p className="text-3xl text-top">&#8640;</p>
+        </div>
       </div>
       <div
         id="age_scale"
-        className="relative justify-end grid grid-rows-[repeat(80,minmax(0,1fr))]"
+        className="col-start-2 row-start-2 gap-1.5 justify-end grid grid-rows-[repeat(80,minmax(0,1fr))] w-5"
       >
         {[...Array(80)].map((_, i) => (
-          <div key={i} className="mr-2 relative flex items-center justify-end">
-            <p className="text-end absolute font-semibold sm:-top-1 text-sm">
+          <div
+            key={i}
+            className="mr-2 relative flex items-center justify-end w-5"
+          >
+            <p className="absolute -top-[1.7em] text-end font-semibold text-sm pt-[100%]">
               {/* eslint-disable-next-line no-nested-ternary */}
               {i + 1 === 1 ? i + 1 : (i + 1) % 5 ? null : i + 1}
             </p>
           </div>
         ))}
       </div>
-      <div className="grid gap-2 grid-flow-row grid-cols-[repeat(26,minmax(0,1fr))] auto-rows-max auto-cols-max md:grid-cols-[repeat(52,minmax(0,1fr))]">
+      <div className="col-start-3 row-start-2 grid gap-1.5 grid-flow-row grid-cols-[repeat(26,minmax(0,1fr))] auto-rows-max auto-cols-max md:grid-cols-[repeat(52,minmax(0,1fr))] md:grid-rows-[repeat(80,minmax(0,1fr))]">
         {tiles.map((_, i) => (
           <div
             id="weekList"
